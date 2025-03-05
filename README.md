@@ -15,18 +15,13 @@ ServoCirc is a library designed for controlling servo motors with circular motio
 ## Usage
 ```cpp
 #include <servo_circ.h>
+servo_circ obj(7,9);
+void setup(){
+  Serial.begin(9600);
 
-ServoCirc myServo;
-
-void setup() {
-    myServo.attach(9); // Attach to pin 9
-    myServo.setLimits(0, 180); // Set motion limits
 }
-
-void loop() {
-    myServo.moveTo(90); // Move to 90 degrees
-    delay(1000);
-    myServo.moveTo(0); // Move back to 0 degrees
-    delay(1000);
+void loop(){
+  obj.servomotion(0, 180, 2000);
+  while (true);
 }
 ```
